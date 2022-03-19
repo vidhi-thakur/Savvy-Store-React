@@ -1,0 +1,24 @@
+.category-card {
+    width: 12rem;
+    height: 12rem;
+    position: relative;
+    cursor: pointer;
+    border-radius: var(--default-border);
+}
+
+.category-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    border-radius: inherit;
+}
+
+.category-text {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+    font-size: large;
+}
