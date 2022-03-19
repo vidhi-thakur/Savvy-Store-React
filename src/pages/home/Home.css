@@ -1,0 +1,8 @@
+.about-section {
+  margin: var(--default-spacing) 0rem;
+}
+
+.about {
+    text-align: center;
+    padding: 0;
+}
