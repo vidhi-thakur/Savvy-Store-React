@@ -13,5 +13,3 @@ function CategoryOverlay({ cardImage, cardText }) {
 }
 
 export default CategoryOverlay
-
-// other greenery 
