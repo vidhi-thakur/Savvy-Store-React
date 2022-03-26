@@ -9,7 +9,7 @@ import DealOfTheDay from '../../components/home/dealsOfTheDay/DealOfTheDay'
 
 function Home() {
   return (
-    <div>
+    <div className='home'>
       <section className="about-section">
         <div className="about pt-1 m-auto">
           <h2 className="about-heading">Welcome to <span className="heading-highlight">Savvy</span></h2>
@@ -17,7 +17,6 @@ function Home() {
             Your one stop destination to buy florals and garden crafts.
           </p>
           <p className="about-content mt-1">
-            {/* Check the documentation to understand more about the UI. */}
           </p>
           <div>
             <a href="./pages/documentation.html">
@@ -27,7 +26,7 @@ function Home() {
         </div>
       </section>
       <HomeCategory />
-      <DealOfTheDay />
+      {/* <DealOfTheDay /> */}
     </div>
   )
 }

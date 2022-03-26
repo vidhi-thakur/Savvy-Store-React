@@ -4,8 +4,8 @@
 }
 
 .featuredCategory-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    display: flex;
     gap: var(--default-spacing);
     margin-top: var(--default-spacing);
+    justify-content: center;
 }
