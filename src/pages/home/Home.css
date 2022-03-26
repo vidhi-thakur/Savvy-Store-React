@@ -1,8 +1,7 @@
 .about-section {
-  margin: var(--xlarge-spacing) 0rem;
+  margin: var(--xlarge-spacing) auto;
   width: 100%;
   max-width: 56.25rem;
-  margin: auto;
 }
 
 .about {
