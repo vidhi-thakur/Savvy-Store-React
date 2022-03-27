@@ -9,3 +9,7 @@
     margin-top: var(--default-spacing);
     justify-content: center;
 }
+
+.featuredCategory {
+    margin-bottom: 5.5rem;
+}
