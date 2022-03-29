@@ -1,0 +1,40 @@
+.price-range-input {
+  display: flex;
+  align-items: center;
+  gap: var(--sm-spacing);
+  padding-top: var(--sm-spacing);
+  margin-bottom: var(--lg-spacing);
+}
+
+.price-range {
+  flex: 1;
+  cursor: pointer;
+}
+
+.category-input {
+  padding: 0;
+  margin: var(--sm-spacing) 0;
+}
+
+.ratings,
+.sortBy,
+.category {
+  margin-bottom: var(--lg-spacing);
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--lg-spacing);
+}
+
+.filter {
+  grid-area: aside;
+  background-color: var(--basic-bg);
+  z-index: -1;
+  border-right: 1px solid var(--secondary-color-light-shade3);
+  padding: var(--default-spacing);
+  min-height: 100vh;
+  flex-basis: 25%;
+}
