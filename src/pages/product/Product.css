@@ -3,13 +3,6 @@
   min-height: 88.5vh;
 }
 
-.product {
-  flex-basis: 75%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 @media screen and (max-width: 950px) {
   .product-listing {
     grid-template-columns: 1fr;

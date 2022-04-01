@@ -1,7 +1,10 @@
 import React from 'react';
+import FilterType from '../filterType/FilterType';
 
 // css
 import './Sidebar.css';
+
+const input = ["Men's cloathing", "Women's cloathing"]
 
 function Sidebar() {
   return (
@@ -19,59 +22,20 @@ function Sidebar() {
         </div>
       </section>
 
-      <section>
-        <h3 className="mb-05">Category</h3>
-        <div className="category">
-          <div className="checkbox input-container category-input">
-            <input className="checkbox-input" id="checkbox-input" type="checkbox" /><label
-              for="checkbox-input">Men cloathig</label>
-          </div>
+      <FilterType
+        heading="Category"
+        inputs={input}
+      />
 
-          <div className="checkbox input-container category-input">
-            <input className="checkbox-input" id="checkbox-input" type="checkbox" /><label
-              for="checkbox-input">Women cloathig</label>
-          </div>
-        </div>
-      </section>
+      <FilterType
+        heading="Sort by"
+        inputs={input}
+      />
 
-      <section>
-        <h3 className="mb-05">Sort by</h3>
-        <div className="sortBy">
-          <div className="radio input-container category-input">
-            <input className="radio-input" id="radio-input" type="radio" /><label for="radio-input">Men
-              cloathig</label>
-          </div>
-
-          <div className="radio input-container category-input">
-            <input className="radio-input" id="radio-input" type="radio" /><label for="radio-input">Women
-              cloathig</label>
-          </div>
-          <div className="radio input-container category-input">
-            <input className="radio-input" id="radio-input" type="radio" /><label for="radio-input">Men
-              cloathig</label>
-          </div>
-
-          <div className="radio input-container category-input">
-            <input className="radio-input" id="radio-input" type="radio" /><label for="radio-input">Women
-              cloathig</label>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 className="mb-05">Ratings</h3>
-        <div className="ratings">
-          <div className="radio input-container category-input">
-            <input className="radio-input" id="radio-input" type="radio" /><label for="radio-input">Men
-              cloathig</label>
-          </div>
-
-          <div className="radio input-container category-input">
-            <input className="radio-input" id="radio-input" type="radio" /><label for="radio-input">Women
-              cloathig</label>
-          </div>
-        </div>
-      </section>
+      <FilterType
+        heading="Ratings"
+        inputs={input}
+      />
     </aside>
   )
 }
