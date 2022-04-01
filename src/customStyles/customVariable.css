@@ -1,0 +1,13 @@
+:root {
+    /* custom spacings for e comm */
+    --xlarge-spacing: 3rem;
+    --large-spacing: 2rem;
+    --medium-spacing: 1rem;
+    --small-spacing: 0.5rem;
+
+    /* custon font size */
+    --xl-heading: 3rem;
+    --lg-heading: 2rem;
+    --md-heading: 1rem;
+    --sm-heading: 0.5rem;
+}

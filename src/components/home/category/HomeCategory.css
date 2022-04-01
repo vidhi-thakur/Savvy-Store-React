@@ -1,0 +1,15 @@
+.featuredCategory-heading {
+    font-size: var(--lg-heading);
+    text-align: center;
+}
+
+.featuredCategory-cards {
+    display: flex;
+    gap: var(--default-spacing);
+    margin-top: var(--default-spacing);
+    justify-content: center;
+}
+
+.featuredCategory {
+    margin-bottom: 5.5rem;
+}
