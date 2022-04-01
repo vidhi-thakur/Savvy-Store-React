@@ -1,0 +1,11 @@
+.wishlist-heading {
+    margin: 1.5rem auto 0;
+    width: fit-content;
+}
+
+.wishlisted-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
