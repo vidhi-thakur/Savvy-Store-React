@@ -1,4 +1,5 @@
 import React from 'react';
+import { wishlist } from '../../backend/db/wishlist';
 import WishlistCard from '../../components/wishlist/wishlistCard/WishlistCard';
 
 // css
@@ -12,10 +13,15 @@ function Wishlist() {
             </header>
 
             <section className="wishlisted-items">
-                <WishlistCard />
-                <WishlistCard />
-                <WishlistCard />  
-                <WishlistCard />               
+                {wishlist.map(list => <WishlistCard
+                    key={list._id}
+                    title={list.title}
+                    rating={list.rating}
+                    description={list.description}
+                    wishlistImage={list.wishlistImage}
+                    author={list.author}
+                    price={list.price}
+                />)}
             </section>
         </div>
     )
