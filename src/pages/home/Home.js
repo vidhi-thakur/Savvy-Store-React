@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // css
 import './Home.css'
@@ -18,9 +19,9 @@ function Home() {
                     <p className="about-content mt-1">
                     </p>
                     <div>
-                        <a href="./pages/documentation.html">
+                        <Link to="/product">
                             <button className="btn btn-primary-contained btn-doc">shop now <i className='fas fa-arrow-right'></i></button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

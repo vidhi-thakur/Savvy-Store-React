@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // css
 import './Signup.css'
@@ -31,8 +32,8 @@ function Signup() {
                     </div>
                     <button type="submit" className="btn btn-primary-contained btn-extra">login</button>
                 </form>
-                <a href="./login.html" className="form-link">Already have an account? Login here <i
-                    className='fas fa-angle-right'></i></a>
+                <Link to="/login" className="form-link">Already have an account? Login here <i
+                    className='fas fa-angle-right'></i></Link>
             </div>
         </main>
     )

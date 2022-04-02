@@ -5,16 +5,16 @@ import App from "./App";
 import { makeServer } from "./server";
 
 // router
-import { Router as BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter>
       <App />
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
