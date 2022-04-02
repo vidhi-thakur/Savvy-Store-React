@@ -14,6 +14,7 @@ function Wishlist() {
             <section className="wishlisted-items">
                 <WishlistCard />
                 <WishlistCard />
+                <WishlistCard />  
                 <WishlistCard />               
             </section>
         </div>
