@@ -1,0 +1,14 @@
+.cart-heading {
+  margin: 1.5rem auto 0;
+  width: fit-content;
+}
+
+.cart {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.cart-items {
+  margin: auto;
+}
+

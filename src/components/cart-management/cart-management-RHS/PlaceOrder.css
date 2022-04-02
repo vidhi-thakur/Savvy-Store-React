@@ -1,0 +1,40 @@
+.price-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  .price-detail {
+    margin: 1.5rem;
+    background-color: var(--basic-bg);
+    padding: var(--default-spacing);
+    width: 100%;
+    border-radius: var(--default-border);
+  }
+  
+  .price-cell {
+    padding: var(--sm-spacing);
+  }
+  
+  .price-cell:nth-child(even) {
+    text-align: right;
+  }
+  .price-cell:nth-child(odd) {
+    text-align: left;
+  }
+  
+  .price-para {
+    text-align: center;
+  }
+  
+  .price-head {
+    border-bottom: 1px solid var(--secondary-color-light-shade1);
+    text-align: center;
+    padding-bottom: var(--sm-spacing);
+  }
+  
+  .price-table {
+    border-bottom: 1px solid var(--secondary-color-light-shade1);
+  }
+  
