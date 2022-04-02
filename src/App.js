@@ -14,6 +14,7 @@ import Login from "./pages/login/Login";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Product from "./pages/product/Product";
 import CartManagement from "./pages/cart-management/CartManagement";
+import PageNotFound from "./pages/pageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path='/product' element={<Product />} />
         <Route path="/cart-management" element={<CartManagement />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </div>

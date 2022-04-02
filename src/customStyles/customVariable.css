@@ -11,3 +11,7 @@
     --md-heading: 1rem;
     --sm-heading: 0.5rem;
 }
+
+.w-full {
+    width: 100%;
+}
