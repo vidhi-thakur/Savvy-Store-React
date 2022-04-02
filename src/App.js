@@ -3,13 +3,13 @@ import "./App.css";
 // local components
 import Navbar from "./components/navbar/Navbar";
 import Footer from './components/footer/Footer'
-import CartManagement from "./pages/cart-management/CartManagement";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <CartManagement />
+      <Login />
       <Footer />
     </div>
   );
