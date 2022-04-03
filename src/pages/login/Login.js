@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-
 // css 
 import './Login.css'
 
@@ -34,4 +33,4 @@ function Login() {
     )
 }
 
-export default Login
+export { Login }

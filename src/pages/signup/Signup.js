@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 // css
 import './Signup.css'
 
@@ -39,4 +38,4 @@ function Signup() {
     )
 }
 
-export default Signup
+export { Signup }

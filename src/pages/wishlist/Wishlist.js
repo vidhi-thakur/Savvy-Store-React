@@ -1,9 +1,8 @@
 import React from 'react';
-import { wishlist } from '../../backend/db/wishlist';
-import WishlistCard from '../../components/wishlist/wishlistCard/WishlistCard';
-
+import { wishlist } from 'backend/db/wishlist';
+import WishlistCard from 'components/wishlist/wishlistCard/WishlistCard';
 // css
-import './Wishlist.css'
+import './Wishlist.css';
 
 function Wishlist() {
     return (
@@ -27,4 +26,4 @@ function Wishlist() {
     )
 }
 
-export default Wishlist
+export { Wishlist }

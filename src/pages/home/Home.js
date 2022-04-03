@@ -1,11 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 // css
 import './Home.css'
-
 // local components
-import HomeCategory from '../../components/home/category/HomeCategory'
+import HomeCategory from 'components/home/category/HomeCategory'
 
 function Home() {
     return (
@@ -30,4 +28,4 @@ function Home() {
     )
 }
 
-export default Home
+export { Home }

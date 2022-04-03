@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 // image
-import pageNotFound from '../../images/pageNotFound.svg'
-
+import pageNotFound from 'images/pageNotFound.svg'
 // css
 import './PageNotFound.css'
 
@@ -16,4 +14,4 @@ function PageNotFound() {
     )
 }
 
-export default PageNotFound
+export { PageNotFound }

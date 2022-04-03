@@ -1,20 +1,22 @@
-import "./App.css";
+import "App.css";
 
 // router
 import { Link, Routes, Route, } from "react-router-dom";
 
 // local components
-import Navbar from "./components/navbar/Navbar";
-import Footer from './components/footer/Footer'
+import Navbar from "components/navbar/Navbar";
+import Footer from 'components/footer/Footer'
 
 // pages
-import Signup from "./pages/signup/Signup";
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import Wishlist from "./pages/wishlist/Wishlist";
-import Product from "./pages/product/Product";
-import CartManagement from "./pages/cart-management/CartManagement";
-import PageNotFound from "./pages/pageNotFound/PageNotFound";
+import {
+  CartManagement,
+  Signup,
+  Home,
+  Login,
+  Wishlist,
+  Product,
+  PageNotFound
+} from 'pages/exportPages';
 
 function App() {
   return (

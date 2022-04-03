@@ -1,12 +1,10 @@
 import React from 'react'
-
 // css
 import './CartManagement.css'
-
 // local components
-import CartManagementCard from '../../components/cart-management/cart-management-card/CartManagementCard'
-import PlaceOrder from '../../components/cart-management/cart-management-RHS/PlaceOrder'
-import { cartManagement } from '../../backend/db/cartManagement'
+import CartManagementCard from 'components/cart-management/cart-management-card/CartManagementCard'
+import PlaceOrder from 'components/cart-management/cart-management-RHS/PlaceOrder'
+import { cartManagement } from 'backend/db/cartManagement'
 
 function CartManagement() {
     return (
@@ -34,4 +32,4 @@ function CartManagement() {
     )
 }
 
-export default CartManagement
+export { CartManagement }
