@@ -1,6 +1,5 @@
 import React from 'react';
 import FilterType from '../filterType/FilterType';
-
 // css
 import './Sidebar.css';
 

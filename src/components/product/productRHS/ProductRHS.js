@@ -1,9 +1,9 @@
 import React from 'react';
 import { products } from 'backend/db/products';
-import ProductCard from '../productCard/ProductCard';
-
 // css
-import './ProductRHS.css'
+import './ProductRHS.css';
+// local component
+import ProductCard from '../productCard/ProductCard';
 
 function ProductRHS() {
     return (

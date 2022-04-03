@@ -1,5 +1,4 @@
 import React from 'react';
-
 // css
 import './ProductCard.css'
 

@@ -1,17 +1,12 @@
 import React from 'react'
-
 // css
 import './HomeCategory.css'
-
 // static json
 import { featuredCategory } from 'static/home/featuredCategory'
-
 // local components
 import CategoryOverlay from 'components/UIcomponents/categoryCard/CategoryOverlay'
 
-
 function HomeCategory() {
-
   return (
     <div className='featuredCategory'>
       <h3 className="featuredCategory-heading">Featured Categories</h3>
