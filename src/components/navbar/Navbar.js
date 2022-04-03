@@ -1,5 +1,5 @@
 import React from 'react'
-import ecom from "../../images/ECom-logo.svg"
+import ecom from "images/ECom-logo.svg"
 
 // router
 import { NavLink } from 'react-router-dom'

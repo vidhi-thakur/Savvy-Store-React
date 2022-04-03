@@ -4,10 +4,10 @@ import React from 'react'
 import './HomeCategory.css'
 
 // static json
-import { featuredCategory } from '../../../static/home/featuredCategory'
+import { featuredCategory } from 'static/home/featuredCategory'
 
 // local components
-import CategoryOverlay from '../../UIcomponents/categoryCard/CategoryOverlay'
+import CategoryOverlay from 'components/UIcomponents/categoryCard/CategoryOverlay'
 
 
 function HomeCategory() {

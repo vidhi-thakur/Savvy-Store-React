@@ -1,5 +1,5 @@
 import React from 'react';
-import { products } from '../../../backend/db/products';
+import { products } from 'backend/db/products';
 import ProductCard from '../productCard/ProductCard';
 
 // css
