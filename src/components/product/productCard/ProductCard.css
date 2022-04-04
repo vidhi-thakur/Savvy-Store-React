@@ -1,0 +1,13 @@
+.card-image-horizontal {
+    height: auto;
+}
+
+.card-productInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-vertical {
+    height: fit-content;
+}

@@ -1,0 +1,16 @@
+.product-listing {
+  display: flex;
+  min-height: 88.5vh;
+}
+
+@media screen and (max-width: 950px) {
+  .product-listing {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "aside"
+      "aside"
+      "product"
+      "product"
+      "product";
+  }
+}

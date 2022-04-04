@@ -1,0 +1,8 @@
+.filterName {
+  margin-bottom: var(--lg-spacing);
+}
+
+.filterName-input {
+    padding: 0;
+    margin: var(--sm-spacing) 0;
+  }
