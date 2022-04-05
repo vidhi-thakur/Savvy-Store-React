@@ -1,3 +1,7 @@
+.cart-management {
+  min-height: 100vh;
+}
+
 .cart-heading {
   margin: 1.5rem auto 0;
   width: fit-content;
@@ -12,3 +16,6 @@
   margin: auto;
 }
 
+.empty-cart {
+  margin: 5rem auto;
+}

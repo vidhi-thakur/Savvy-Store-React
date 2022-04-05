@@ -1,14 +1,23 @@
-import React from 'react';
-import { products } from 'backend/db/products';
+import React, { useEffect, useState } from 'react';
 // css
 import './ProductRHS.css';
 // local component
 import ProductCard from '../productCard/ProductCard';
+// helpers
+import { fetchProducts } from 'utils/api/fetchProducts';
 
 function ProductRHS() {
+    const [products, setProducts] = useState(null)
+    useEffect(() => {
+        (async () => {
+            const response = await fetchProducts();
+            setProducts(response);
+        })()
+    }, [])
     return (
         <section className="product">
-            {products.map(prod => <ProductCard
+            {products && products.map(prod => <ProductCard
+                id={prod._id}
                 key={prod._id}
                 title={prod.title}
                 rating={prod.rating}
