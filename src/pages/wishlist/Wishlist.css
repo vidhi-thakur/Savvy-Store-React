@@ -9,3 +9,7 @@
     margin: auto;
     justify-content: center;
 }
+
+.wishlist {
+    min-height: 85vh;
+}

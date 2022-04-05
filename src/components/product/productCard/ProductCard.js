@@ -3,13 +3,30 @@ import React from 'react';
 import './ProductCard.css'
 // context
 import { useCart } from 'context/addToCart';
+import { useWishlist } from 'context/addToWishlist';
 
 function ProductCard({ id, title, author, rating, description, price, productImage }) {
-    const [, dispatch] = useCart();
+    const [, dispatchCart] = useCart();
+    const [, dispatchWishlist] = useWishlist();
 
     const addItemToCart = () => {
-        dispatch({
+        dispatchCart({
             type: "ADD_TO_CART",
+            payload: {
+                title,
+                author,
+                rating,
+                description,
+                price,
+                productImage,
+                id
+            }
+        })
+    }
+
+    const addItemToWishlist = () => {
+        dispatchWishlist({
+            type: "ADD_TO_WISHLIST",
             payload: {
                 title,
                 author,
@@ -37,6 +54,8 @@ function ProductCard({ id, title, author, rating, description, price, productIma
             <div className="card-btnContainer">
                 <button onClick={addItemToCart} className="btn btn-primary-contained"><i className="fas fa-cart-plus  mr-05"></i> add to
                     cart</button>
+                <button onClick={addItemToWishlist} className="btn btn-primary-outlined"><i className="fas fa-cart-plus  mr-05"></i> add to
+                    wishlist</button>
             </div>
         </div>
     )

@@ -1,13 +1,31 @@
 import React from 'react';
 // context
 import { useCart } from 'context/addToCart';
+import { useWishlist } from 'context/addToWishlist';
 
 function CartManagementCard({ id, title, author, rating, description, price, productImage, }) {
-    const [, dispatch] = useCart();
+    const [, dispatchCart] = useCart();
+    const [, dispatchWishlist] = useWishlist()
 
     const removeItemFromCart = () => {
-        dispatch({
+        dispatchCart({
             type: "REMOVE_FROM_CART",
+            payload: {
+                title,
+                author,
+                rating,
+                description,
+                price,
+                productImage,
+                id
+            }
+        })
+    }
+
+    const moveToWishlist = () => {
+        removeItemFromCart();
+        dispatchWishlist({
+            type: "ADD_TO_WISHLIST",
             payload: {
                 title,
                 author,
@@ -36,7 +54,7 @@ function CartManagementCard({ id, title, author, rating, description, price, pro
                 <div className="card-btnContainer br-inherit">
                     <button onClick={removeItemFromCart} className="btn btn-primary-outlined"><i className="fas fa-cart-plus  mr-05"></i> remove from
                         cart</button>
-                    <button className="btn btn-primary-outlined">move to wishlist</button>
+                    <button onClick={moveToWishlist} className="btn btn-primary-outlined">move to wishlist</button>
                 </div>
             </div>
         </div>
