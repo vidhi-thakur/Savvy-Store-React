@@ -2,8 +2,11 @@ import React from 'react'
 import ecom from "images/ECom-logo.svg"
 // router
 import { NavLink } from 'react-router-dom'
+// context
+import { useCart } from 'context/addToCart';
 
 function Navbar() {
+    const [{ cartItems },] = useCart();
     return (
         <nav className="nav">
             <div className="avatar avatar-sm">
@@ -21,8 +24,7 @@ function Navbar() {
                 </NavLink>
                 <NavLink to='/product'>
                     <span className="position-rel nav-icon-box">
-                        <i className="fas fa-user-alt nav-icon"></i><span
-                            className="badge status-badge badge-primary-contained badge-round sm-badge">5</span>
+                        <i className="fas fa-shopping-bag nav-icon"></i>
                     </span>
                 </NavLink>
                 <NavLink to='/wishlist'>
@@ -33,8 +35,8 @@ function Navbar() {
                 </NavLink>
                 <NavLink to='/cart-management'>
                     <span className="position-rel nav-icon-box">
-                        <i className="fas fa-cart-plus nav-icon"></i><span
-                            className="badge status-badge badge-primary-contained badge-round sm-badge">9</span>
+                        <i className="fas fa-cart-plus nav-icon"></i>{cartItems.length > 0 && <span
+                            className="badge status-badge badge-primary-contained badge-round sm-badge">{cartItems.length}</span>}
                     </span>
                 </NavLink>
             </div>

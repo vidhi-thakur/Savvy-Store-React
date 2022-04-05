@@ -1,11 +1,29 @@
-import React from 'react'
+import React from 'react';
+// context
+import { useCart } from 'context/addToCart';
 
-function CartManagementCard({ title, author, rating, description, price, cartImage, }) {
+function CartManagementCard({ id, title, author, rating, description, price, productImage, }) {
+    const [, dispatch] = useCart();
+
+    const removeItemFromCart = () => {
+        dispatch({
+            type: "REMOVE_FROM_CART",
+            payload: {
+                title,
+                author,
+                rating,
+                description,
+                price,
+                productImage,
+                id
+            }
+        })
+    }
     return (
         <div className="card card-horizontal">
             <span className="badge badge-primary-contained card-customBadge-horizontal">Best seller</span>
             <img loading="lazy" className="card-image-vertical"
-                src={cartImage}
+                src={productImage}
                 alt={title}
             />
             <div className="br-inherit flex-1">
@@ -16,7 +34,7 @@ function CartManagementCard({ title, author, rating, description, price, cartIma
                     <p>{description}</p>
                 </div>
                 <div className="card-btnContainer br-inherit">
-                    <button className="btn btn-primary-outlined"><i className="fas fa-cart-plus  mr-05"></i> remove from
+                    <button onClick={removeItemFromCart} className="btn btn-primary-outlined"><i className="fas fa-cart-plus  mr-05"></i> remove from
                         cart</button>
                     <button className="btn btn-primary-outlined">move to wishlist</button>
                 </div>
