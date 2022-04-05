@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // css
 import './CartManagement.css'
 // local components
@@ -9,13 +10,13 @@ import { cartManagement } from 'backend/db/cartManagement'
 import { useCart } from 'context/addToCart'
 
 function CartManagement() {
-    const [{ cartItems }, ] = useCart();
+    const [{ cartItems },] = useCart();
 
     let isCartEmpty = cartItems.length === 0;
     return (
         <div className='cart-management'>
             <header>
-                <h3 className="cart-heading">My Cart(2)</h3>
+                <h3 className="cart-heading">My Cart({cartItems.length})</h3>
             </header>
 
             <section className="cart">
@@ -30,8 +31,11 @@ function CartManagement() {
                         author={cartItem.author}
                         price={cartItem.price}
                     />)}
-                </div>: <div className="empty-cart">
+                </div> : <div className="empty-cart">
                     <h1>Your cart is empty!</h1>
+                    <Link to="/product">
+                        <button className="btn btn-primary-contained btn-doc">shop now <i className='fas fa-arrow-right'></i></button>
+                    </Link>
                 </div>}
                 {!isCartEmpty && <PlaceOrder />}
             </section>

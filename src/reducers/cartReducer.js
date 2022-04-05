@@ -3,13 +3,13 @@ export const initialCart = {
     totalAmount: 0
 }
 
-function cartReducer(state, action) {
-    switch (action.type) {
+function cartReducer(state, {type, payload}) {
+    switch (type) {
         case 'ADD_TO_CART':
-            return { cartItems: [...state.cartItems, action.payload], totalAmount: state.totalAmount + action.payload.price }
+            return { cartItems: [...state.cartItems, payload], totalAmount: state.totalAmount + payload.price }
         case 'REMOVE_FROM_CART':
-            let newCartItems = state.cartItems.filter(cart => cart.id !== action.payload.id)
-            return { cartItems: newCartItems, totalAmount: state.totalAmount - action.payload.price }
+            let newCartItems = state.cartItems.filter(cart => cart.id !== payload.id)
+            return { cartItems: newCartItems, totalAmount: state.totalAmount - payload.price }
         default:
             return { ...state }
     }
