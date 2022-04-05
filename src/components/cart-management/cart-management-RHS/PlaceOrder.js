@@ -1,9 +1,11 @@
 import React from 'react'
-
 // css
 import './PlaceOrder.css'
+// context
+import { useCart } from 'context/addToCart'
 
 function PlaceOrder() {
+    const [{ cartItems, totalAmount },] = useCart()
     return (
         <aside className="price-container p-1">
             <div className="price-detail">
@@ -17,22 +19,22 @@ function PlaceOrder() {
                     </thead>
                     <tbody className="price-body w-full">
                         <tr className="price-row w-full">
-                            <td className="price-cell">Price (2 items)</td>
-                            <td className="price-cell">Rs. 4999</td>
+                            <td className="price-cell">Price ({cartItems.length} items)</td>
+                            <td className="price-cell">Rs. {totalAmount}</td>
                         </tr>
                         <tr className="price-row w-full">
                             <td className="price-cell">Discount</td>
-                            <td className="price-cell">-Rs. 1999</td>
+                            <td className="price-cell">-Rs. 100</td>
                         </tr>
                         <tr className="price-row w-full">
                             <td className="price-cell">Delivery charges</td>
-                            <td className="price-cell">Rs. 199</td>
+                            <td className="price-cell">Rs. 100</td>
                         </tr>
                     </tbody>
                     <tfoot className="price-foot w-full">
                         <tr className="price-row font-bold w-full">
                             <td className="price-cell">TOTAL AMOUNT</td>
-                            <td className="price-cell">Rs. 3199</td>
+                            <td className="price-cell">Rs. {totalAmount}</td>
                         </tr>
                     </tfoot>
                 </table>
