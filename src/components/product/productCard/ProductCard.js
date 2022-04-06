@@ -54,7 +54,7 @@ function ProductCard({ id, title, author, rating, description, price, productIma
             <div className="card-btnContainer">
                 <button onClick={addItemToCart} className="btn btn-primary-contained"><i className="fas fa-cart-plus  mr-05"></i> add to
                     cart</button>
-                <button onClick={addItemToWishlist} className="btn btn-primary-outlined"><i className="fas fa-cart-plus  mr-05"></i> add to
+                <button onClick={addItemToWishlist} className="btn btn-primary-outlined mt-0"><i className="fas fa-cart-plus  mr-05"></i> add to
                     wishlist</button>
             </div>
         </div>
