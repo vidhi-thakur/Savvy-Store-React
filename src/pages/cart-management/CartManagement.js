@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 // css
 import './CartManagement.css'
 // local components
 import CartManagementCard from 'components/cart-management/cart-management-card/CartManagementCard'
 import PlaceOrder from 'components/cart-management/cart-management-RHS/PlaceOrder'
-import { cartManagement } from 'backend/db/cartManagement'
+import NoData from 'components/UIcomponents/noDataPage/NoData'
 // context
 import { useCart } from 'context/addToCart'
 
@@ -31,12 +30,7 @@ function CartManagement() {
                         author={cartItem.author}
                         price={cartItem.price}
                     />)}
-                </div> : <div className="empty-cart">
-                    <h1>Your cart is empty!</h1>
-                    <Link to="/product">
-                        <button className="btn btn-primary-contained btn-doc">shop now <i className='fas fa-arrow-right'></i></button>
-                    </Link>
-                </div>}
+                </div> : <NoData componentName="cart" />}
                 {!isCartEmpty && <PlaceOrder />}
             </section>
 

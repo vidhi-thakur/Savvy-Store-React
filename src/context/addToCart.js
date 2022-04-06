@@ -6,8 +6,9 @@ const CartContext = createContext();
 const useCart = () => useContext(CartContext)
 
 const CartProvider = ({ children }) => {
+    let cart = useReducer(cartReducer, initialCart)
     return (
-        <CartContext.Provider value={useReducer(cartReducer, initialCart)}>
+        <CartContext.Provider value={cart}>
             {children}
         </CartContext.Provider>
     )

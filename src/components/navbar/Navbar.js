@@ -4,9 +4,11 @@ import ecom from "images/ECom-logo.svg"
 import { NavLink } from 'react-router-dom'
 // context
 import { useCart } from 'context/addToCart';
+import { useWishlist } from 'context/addToWishlist';
 
 function Navbar() {
     const [{ cartItems },] = useCart();
+    const [{ wishlistItems },] = useWishlist();
     return (
         <nav className="nav">
             <div className="avatar avatar-sm">
@@ -29,8 +31,8 @@ function Navbar() {
                 </NavLink>
                 <NavLink to='/wishlist'>
                     <span className="position-rel nav-icon-box">
-                        <i className="fas fa-heart nav-icon"></i><span
-                            className="badge status-badge badge-primary-contained badge-round sm-badge">5</span>
+                        <i className="fas fa-heart nav-icon"></i>{wishlistItems.length > 0 && <span
+                            className="badge status-badge badge-primary-contained badge-round sm-badge">{wishlistItems.length}</span>}
                     </span>
                 </NavLink>
                 <NavLink to='/cart-management'>

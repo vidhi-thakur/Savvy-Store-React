@@ -1,5 +1,5 @@
 .cart-management {
-  min-height: 100vh;
+  min-height: 85vh;
 }
 
 .cart-heading {
@@ -14,12 +14,4 @@
 
 .cart-items {
   margin: auto;
-}
-
-.empty-cart {
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }

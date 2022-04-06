@@ -1,28 +1,38 @@
 import React from 'react';
-import { wishlist } from 'backend/db/wishlist';
-import WishlistCard from 'components/wishlist/wishlistCard/WishlistCard';
 // css
 import './Wishlist.css';
+//context
+import { useWishlist } from 'context/addToWishlist';
+// local components
+import NoData from 'components/UIcomponents/noDataPage/NoData';
+import WishlistCard from 'components/wishlist/wishlistCard/WishlistCard';
 
 function Wishlist() {
+    const [{ wishlistItems },] = useWishlist();
+    let isWishlistEmpty = wishlistItems.length === 0;
     return (
-        <div>
+        <div className='wishlist'>
             <header>
                 <h3 className="wishlist-heading">My Wishlist</h3>
             </header>
 
-            <section className="wishlisted-items">
-                {wishlist.map(list => <WishlistCard
-                    key={list._id}
+            {!isWishlistEmpty ? <section className="wishlisted-items">
+                {wishlistItems.map(list => <WishlistCard
+                    id={list.id}
+                    key={list.id}
                     title={list.title}
                     rating={list.rating}
                     description={list.description}
-                    wishlistImage={list.wishlistImage}
+                    productImage={list.productImage}
                     author={list.author}
                     price={list.price}
                 />)}
-            </section>
-        </div>
+            </section> : <NoData
+                componentName="wishlist"
+                CTAtext="go to cart"
+                CTAlink="/cart-management"
+            />}
+        </div >
     )
 }
 

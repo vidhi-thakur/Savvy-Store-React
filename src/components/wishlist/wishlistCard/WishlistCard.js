@@ -1,13 +1,39 @@
-import React from 'react'
+import React from 'react';
+// context
+import { useCart } from 'context/addToCart';
+import { useWishlist } from 'context/addToWishlist';
 
-function WishlistCard({ title, author, rating, description, price, wishlistImage, }) {
+function WishlistCard({ id, title, author, rating, description, price, productImage, }) {
+    const [, dispatchWishlist] = useWishlist();
+    const [, dispatchCart] = useCart();
+
+    const moveToCart = () => {
+        dispatchWishlist({
+            type: "REMOVE_FROM_WISHLIST",
+            payload: {
+                id
+            }
+        });
+        dispatchCart({
+            type: "ADD_TO_CART",
+            payload: {
+                id,
+                title,
+                author,
+                rating,
+                description,
+                price,
+                productImage,
+            }
+        })
+    }
     return (
         <div className="card card-vertical">
             <div className="badge-container card-customBadge">
                 <i className="fas fa-heart badges icon-badge badge-round"></i>
             </div>
             <img loading="lazy" className="card-image-horizontal"
-                src={wishlistImage}
+                src={productImage}
                 alt={title}
             />
             <div className="card-textContainer">
@@ -17,7 +43,7 @@ function WishlistCard({ title, author, rating, description, price, wishlistImage
                 <p>{description}</p>
             </div>
             <div className="card-btnContainer">
-                <button className="btn btn-primary-contained"><i className="fas fa-cart-plus  mr-05"></i> add to cart</button>
+                <button onClick={moveToCart} className="btn btn-primary-contained"><i className="fas fa-cart-plus  mr-05"></i> move to cart</button>
             </div>
         </div>
     )
