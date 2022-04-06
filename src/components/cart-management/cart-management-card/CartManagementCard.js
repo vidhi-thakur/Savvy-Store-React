@@ -11,12 +11,6 @@ function CartManagementCard({ id, title, author, rating, description, price, pro
         dispatchCart({
             type: "REMOVE_FROM_CART",
             payload: {
-                title,
-                author,
-                rating,
-                description,
-                price,
-                productImage,
                 id
             }
         })

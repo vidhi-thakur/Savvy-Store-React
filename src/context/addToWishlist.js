@@ -6,8 +6,9 @@ const WishlistContext = createContext();
 const useWishlist = () => useContext(WishlistContext)
 
 const WishlistProvider = ({ children }) => {
+    let wishlist = useReducer(wishlistReducer, initialWishlist)
     return (
-        <WishlistContext.Provider value={useReducer(wishlistReducer, initialWishlist)}>
+        <WishlistContext.Provider value={wishlist}>
             {children}
         </WishlistContext.Provider>
     )

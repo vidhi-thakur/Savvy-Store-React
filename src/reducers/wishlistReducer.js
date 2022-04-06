@@ -7,7 +7,7 @@ function wishlistReducer(state, { type, payload }) {
         case 'ADD_TO_WISHLIST':
             return { wishlistItems: [...state.wishlistItems, payload] }
         case 'REMOVE_FROM_WISHLIST':
-            let newWishlistItems = state.wishlistItems.filter(cart => cart.id !== payload.id)
+            let newWishlistItems = state.wishlistItems.filter(list => list.id !== payload.id)
             return { wishlistItems: newWishlistItems }
         default:
             return { ...state }
