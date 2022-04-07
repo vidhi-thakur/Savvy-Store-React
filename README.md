@@ -11,15 +11,15 @@ It is a _simple and sophisticated_ E-commerce store curated for plants and garde
 4. react-router-dom
 
 ## Current pages
-1. [home page](https://savvy-store.netlify.app/)
+1. [home page](https://savvy-react-store.netlify.app/)
 2. authentication page
-- [login page](https://savvy-store.netlify.app/pages/login.html)
-- [sign-up page](https://savvy-store.netlify.app/pages/sign-up.html)
-3. [product listing page](https://savvy-store.netlify.app/pages/product.html)
-6. [wishlist page](https://savvy-store.netlify.app/pages/wishlist.html)
-7. [cart management page](https://savvy-store.netlify.app/pages/cart-management.html)
+- [login page](https://savvy-react-store.netlify.app/login)
+- [sign-up page](https://savvy-react-store.netlify.app/signup)
+3. [product listing page](https://savvy-react-store.netlify.app/product)
+6. [wishlist page](https://savvy-react-store.netlify.app/wishlist)
+7. [cart management page](https://savvy-react-store.netlify.app/cart-management)
 
 
-#### Live project URL: https://savvy-store.netlify.app/ 
+#### Live project URL: https://savvy-react-store.netlify.app/ 
 
 PS. If you like the repo, do give it a star⭐
