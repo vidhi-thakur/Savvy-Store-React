@@ -1,8 +1,7 @@
 # Savvy-Store (react)
 It is a _simple and sophisticated_ E-commerce store curated for plants and garden supplies.
-![image](https://user-images.githubusercontent.com/72219676/155014678-a1d6f948-7271-420c-8ca6-04202689ca73.png)
-![image](https://user-images.githubusercontent.com/72219676/155014780-c823395f-0912-4096-a3e9-73f9777e58fa.png)
-![image](https://user-images.githubusercontent.com/72219676/155014877-5560e5ae-61d6-40f5-b999-ceb9a4c68eca.png)
+![image](https://user-images.githubusercontent.com/72219676/162253997-387ee586-56b1-469b-b9b6-ef21ee891dae.png)
+![image](https://user-images.githubusercontent.com/72219676/162254056-a9efd591-e07c-4984-bc55-a39b593baab6.png)
 
 ## The technologies used while building this app are as follows
 1. React
