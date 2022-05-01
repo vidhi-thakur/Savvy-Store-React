@@ -3,7 +3,20 @@ import FilterType from '../filterType/FilterType';
 // css
 import './Sidebar.css';
 
-const input = ["Men's cloathing", "Women's cloathing"]
+const filters = [
+  {
+    type: "Category",
+    list: ["All items", "Handmade", "Vintage"]
+  },
+  {
+    type: "Sort by",
+    list: ["Price - low to high", "Price - high to low"]
+  },
+  {
+    type: "Ratings",
+    list: ["5⭐", "4⭐", "3⭐", "2⭐", "1⭐"]
+  }
+]
 
 function Sidebar() {
   return (
@@ -21,20 +34,12 @@ function Sidebar() {
         </div>
       </section>
 
-      <FilterType
-        heading="Category"
-        inputs={input}
-      />
+      {filters.map(filter => <FilterType
+        key={filter.type}
+        heading={filter.type}
+        inputs={filter.list}
+      />)}
 
-      <FilterType
-        heading="Sort by"
-        inputs={input}
-      />
-
-      <FilterType
-        heading="Ratings"
-        inputs={input}
-      />
     </aside>
   )
 }
