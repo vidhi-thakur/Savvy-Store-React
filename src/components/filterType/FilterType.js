@@ -9,8 +9,8 @@ function FilterType({ heading, inputs }) {
             <h3 className="mb-05">{heading}</h3>
             <div className="filterName">
                 {inputs.map((input, i) => <div key={i} className="checkbox input-container filterName-input">
-                    <input className="checkbox-input" id="checkbox-input" type="checkbox" /><label
-                        for="checkbox-input">{input}</label>
+                    <input className="checkbox-input" id={`${input}-${heading}`} type="checkbox" /><label
+                        for={`${input}-${heading}`}>{input}</label>
                 </div>)}
             </div>
         </section>
