@@ -20,7 +20,7 @@ function Login() {
         e.preventDefault()
         if (userName !== '' && password !== '') {
             loginUser()
-            navigate(location?.state?.from?.pathname)
+            navigate(location?.state?.from?.pathname, { replace: true })
         }
     }
     return (
