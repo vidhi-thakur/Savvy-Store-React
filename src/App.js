@@ -2,9 +2,7 @@ import "App.css";
 // router
 import { Link, Routes, Route, } from "react-router-dom";
 // local components
-import Navbar from "components/navbar/Navbar";
-import Footer from 'components/footer/Footer'
-
+import { Footer, Navbar } from "components/exportComponents";
 // pages
 import {
   CartManagement,

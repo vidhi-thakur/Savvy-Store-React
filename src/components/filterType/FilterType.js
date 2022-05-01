@@ -8,7 +8,7 @@ function FilterType({ heading, inputs }) {
         <section>
             <h3 className="mb-05">{heading}</h3>
             <div className="filterName">
-                {inputs.map(input => <div className="checkbox input-container filterName-input">
+                {inputs.map((input, i) => <div key={i} className="checkbox input-container filterName-input">
                     <input className="checkbox-input" id="checkbox-input" type="checkbox" /><label
                         for="checkbox-input">{input}</label>
                 </div>)}
@@ -17,4 +17,4 @@ function FilterType({ heading, inputs }) {
     )
 }
 
-export default FilterType
+export { FilterType }

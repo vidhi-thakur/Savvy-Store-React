@@ -14,4 +14,4 @@ function NoData({ componentName, CTAtext, CTAlink }) {
     )
 }
 
-export default NoData
+export { NoData }

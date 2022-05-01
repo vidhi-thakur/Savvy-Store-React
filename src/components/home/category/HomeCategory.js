@@ -3,8 +3,8 @@ import React from 'react'
 import './HomeCategory.css'
 // static json
 import { featuredCategory } from 'static/home/featuredCategory'
+import { CategoryOverlay } from 'components/exportComponents'
 // local components
-import CategoryOverlay from 'components/UIcomponents/categoryCard/CategoryOverlay'
 
 function HomeCategory() {
   return (
@@ -17,4 +17,4 @@ function HomeCategory() {
   )
 }
 
-export default HomeCategory
+export { HomeCategory }

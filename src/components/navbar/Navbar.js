@@ -5,12 +5,14 @@ import { NavLink } from 'react-router-dom'
 // context
 import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
+// css
+import './Navbar.css'
 
 function Navbar() {
     const [{ cartItems },] = useCart();
     const [{ wishlistItems },] = useWishlist();
     return (
-        <nav className="nav">
+        <nav className="nav nav-container">
             <div className="avatar avatar-sm">
                 <NavLink to="/">
                     <img src={ecom} alt="avatar" />
@@ -45,4 +47,4 @@ function Navbar() {
         </nav>
     )
 }
-export default Navbar
+export { Navbar }
