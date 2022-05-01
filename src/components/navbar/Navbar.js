@@ -7,8 +7,10 @@ import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
 // css
 import './Navbar.css'
+import { useAuth } from 'context/authContext';
 
 function Navbar() {
+    const { isUserLoggedIn, logoutUser } = useAuth()
     const [{ cartItems },] = useCart();
     const [{ wishlistItems },] = useWishlist();
     return (
@@ -23,9 +25,9 @@ function Navbar() {
                 <input className="nav-input" type="text" placeholder="Search" />
             </div>
             <div className="nav-links">
-                <NavLink to='/login'>
+                {!isUserLoggedIn ? <NavLink to='/login'>
                     <button className="btn btn-primary-contained shadow-none">login</button>
-                </NavLink>
+                </NavLink>: <button onClick={logoutUser} className="btn btn-primary-contained shadow-none">logout</button>}
                 <NavLink to='/product'>
                     <span className="position-rel nav-icon-box">
                         <i className="fas fa-shopping-bag nav-icon"></i>
