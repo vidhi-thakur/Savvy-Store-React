@@ -27,7 +27,7 @@ function Navbar() {
             <div className="nav-links">
                 {!isUserLoggedIn ? <NavLink to='/login'>
                     <button className="btn btn-primary-contained shadow-none">login</button>
-                </NavLink>: <button onClick={logoutUser} className="btn btn-primary-contained shadow-none">logout</button>}
+                </NavLink>: <button onClick={logoutUser} className="btn btn-primary-outlined shadow-none">logout</button>}
                 <NavLink to='/product'>
                     <span className="position-rel nav-icon-box">
                         <i className="fas fa-shopping-bag nav-icon"></i>
