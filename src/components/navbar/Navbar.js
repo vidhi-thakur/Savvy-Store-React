@@ -5,12 +5,16 @@ import { NavLink } from 'react-router-dom'
 // context
 import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
+// css
+import './Navbar.css'
+import { useAuth } from 'context/authContext';
 
 function Navbar() {
+    const { isUserLoggedIn, logoutUser } = useAuth()
     const [{ cartItems },] = useCart();
     const [{ wishlistItems },] = useWishlist();
     return (
-        <nav className="nav">
+        <nav className="nav nav-container">
             <div className="avatar avatar-sm">
                 <NavLink to="/">
                     <img src={ecom} alt="avatar" />
@@ -21,9 +25,9 @@ function Navbar() {
                 <input className="nav-input" type="text" placeholder="Search" />
             </div>
             <div className="nav-links">
-                <NavLink to='/login'>
+                {!isUserLoggedIn ? <NavLink to='/login'>
                     <button className="btn btn-primary-contained shadow-none">login</button>
-                </NavLink>
+                </NavLink>: <button onClick={logoutUser} className="btn btn-primary-outlined shadow-none">logout</button>}
                 <NavLink to='/product'>
                     <span className="position-rel nav-icon-box">
                         <i className="fas fa-shopping-bag nav-icon"></i>
@@ -45,4 +49,4 @@ function Navbar() {
         </nav>
     )
 }
-export default Navbar
+export { Navbar }

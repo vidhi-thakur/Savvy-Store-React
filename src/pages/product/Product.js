@@ -2,8 +2,7 @@ import React from 'react';
 // css
 import './Product.css';
 // local component
-import Sidebar from 'components/sidebar/Sidebar';
-import ProductRHS from 'components/product/productRHS/ProductRHS';
+import { ProductRHS, Sidebar } from 'components/exportComponents';
 
 function Product() {
     return (

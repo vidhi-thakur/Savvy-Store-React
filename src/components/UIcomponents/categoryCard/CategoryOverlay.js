@@ -11,4 +11,4 @@ function CategoryOverlay({ cardImage, cardText }) {
     )
 }
 
-export default CategoryOverlay
+export { CategoryOverlay }

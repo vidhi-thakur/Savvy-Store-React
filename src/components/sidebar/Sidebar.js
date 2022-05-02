@@ -1,7 +1,8 @@
 import React from 'react';
-import FilterType from '../filterType/FilterType';
 // css
 import './Sidebar.css';
+// local components
+import { FilterType } from 'components/exportComponents';
 
 const filters = [
   {
@@ -44,4 +45,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export { Sidebar }

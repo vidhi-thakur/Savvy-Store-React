@@ -1,12 +1,10 @@
 import React from 'react'
 // css
 import './CartManagement.css'
-// local components
-import CartManagementCard from 'components/cart-management/cart-management-card/CartManagementCard'
-import PlaceOrder from 'components/cart-management/cart-management-RHS/PlaceOrder'
-import NoData from 'components/UIcomponents/noDataPage/NoData'
 // context
 import { useCart } from 'context/addToCart'
+// local components
+import { CartManagementCard, NoData, PlaceOrder } from 'components/exportComponents';
 
 function CartManagement() {
     const [{ cartItems },] = useCart();

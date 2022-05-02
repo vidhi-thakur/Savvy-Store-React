@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 // css
 import './ProductRHS.css';
-// local component
-import ProductCard from '../productCard/ProductCard';
 // helpers
 import { fetchProducts } from 'utils/api/fetchProducts';
+// local component
+import { ProductCard } from '../productCard/ProductCard';
 
 function ProductRHS() {
     const [products, setProducts] = useState(null)
@@ -30,4 +30,4 @@ function ProductRHS() {
     )
 }
 
-export default ProductRHS
+export { ProductRHS }

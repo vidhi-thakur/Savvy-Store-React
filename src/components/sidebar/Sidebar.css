@@ -20,12 +20,12 @@
 
 .filter {
   background-color: var(--basic-bg);
-  z-index: -1;
+  z-index: 0;
   border-right: 1px solid var(--secondary-color-light-shade3);
   padding: var(--default-spacing);
   min-height: 100vh;
   flex-basis: 25%;
   position: sticky;
   top: 0;
-  position: "-webkit-sticky";
+  position: relative;
 }
