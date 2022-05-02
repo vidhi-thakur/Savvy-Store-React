@@ -1,10 +1,8 @@
 import "App.css";
 // router
-import { Link, Routes, Route, } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // local components
-import Navbar from "components/navbar/Navbar";
-import Footer from 'components/footer/Footer'
-
+import { Footer, Navbar, RequiresAuth } from "components/exportComponents";
 // pages
 import {
   CartManagement,
@@ -24,9 +22,17 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/' element={<Home />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/wishlist" element={
+          <RequiresAuth>
+            <Wishlist />
+          </RequiresAuth>
+        } />
         <Route path='/product' element={<Product />} />
-        <Route path="/cart-management" element={<CartManagement />} />
+        <Route path="/cart-management" element={
+          <RequiresAuth>
+            <CartManagement />
+          </RequiresAuth>
+        } />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

@@ -49,4 +49,4 @@ function WishlistCard({ id, title, author, rating, description, price, productIm
     )
 }
 
-export default WishlistCard
+export { WishlistCard }

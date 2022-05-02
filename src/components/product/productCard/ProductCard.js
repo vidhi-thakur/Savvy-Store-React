@@ -61,4 +61,4 @@ function ProductCard({ id, title, author, rating, description, price, productIma
     )
 }
 
-export default ProductCard
+export { ProductCard }

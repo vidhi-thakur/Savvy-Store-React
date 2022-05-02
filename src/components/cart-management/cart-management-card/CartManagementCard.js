@@ -56,4 +56,4 @@ function CartManagementCard({ id, title, author, rating, description, price, pro
     )
 }
 
-export default CartManagementCard
+export { CartManagementCard }

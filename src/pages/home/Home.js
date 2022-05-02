@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 // css
 import './Home.css'
 // local components
-import HomeCategory from 'components/home/category/HomeCategory'
+import { HomeCategory } from 'components/exportComponents'
 
 function Home() {
     return (

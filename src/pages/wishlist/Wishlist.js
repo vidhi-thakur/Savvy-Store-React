@@ -4,8 +4,7 @@ import './Wishlist.css';
 //context
 import { useWishlist } from 'context/addToWishlist';
 // local components
-import NoData from 'components/UIcomponents/noDataPage/NoData';
-import WishlistCard from 'components/wishlist/wishlistCard/WishlistCard';
+import { NoData, WishlistCard } from 'components/exportComponents';
 
 function Wishlist() {
     const [{ wishlistItems },] = useWishlist();
