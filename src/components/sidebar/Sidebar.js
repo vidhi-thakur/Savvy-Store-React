@@ -19,7 +19,7 @@ const filters = [
   }
 ]
 
-function Sidebar() {
+function Sidebar({ setFilters }) {
   return (
     <aside className="filter">
       <div className="filter-header">
@@ -39,6 +39,7 @@ function Sidebar() {
         key={filter.type}
         heading={filter.type}
         inputs={filter.list}
+        setFilters={setFilters}
       />)}
 
     </aside>

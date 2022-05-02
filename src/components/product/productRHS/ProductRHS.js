@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-// css
 import './ProductRHS.css';
-// helpers
 import { fetchProducts } from 'utils/api/fetchProducts';
-// local component
 import { ProductCard } from '../productCard/ProductCard';
+import { addFilters } from 'helpers/filters';
 
-function ProductRHS() {
+function ProductRHS({ filters }) {
     const [products, setProducts] = useState(null)
     useEffect(() => {
         (async () => {
@@ -16,7 +14,7 @@ function ProductRHS() {
     }, [])
     return (
         <section className="product">
-            {products && products.map(prod => <ProductCard
+            {products && addFilters(products, filters).map(prod => <ProductCard
                 id={prod._id}
                 key={prod._id}
                 title={prod.title}
