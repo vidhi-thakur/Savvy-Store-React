@@ -22,7 +22,6 @@ const sortProducts = (products, filters) => {
 }
 
 const applyRatings = (products, filters) => {
-
     let prodWithRating = products.filter(product => filters.rating.includes(`${product.rating}⭐`));
     return filters.rating.length === 0 ? products : prodWithRating
 }

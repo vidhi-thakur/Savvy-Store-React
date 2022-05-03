@@ -20,11 +20,18 @@ const filters = [
 ]
 
 function Sidebar({ setFilters }) {
+  const resetFilters = () => {
+    setFilters({
+      category: [],
+      sort: [],
+      rating: []
+    })
+  }
   return (
     <aside className="filter">
       <div className="filter-header">
         <h2>Filter</h2>
-        <span className="cp">Clear</span>
+        <span onClick={resetFilters} className="cp">Clear</span>
       </div>
 
       <section>
