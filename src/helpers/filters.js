@@ -14,4 +14,10 @@ const sortProducts = (products, filters) => {
     }
 }
 
-export { addFilters, sortProducts }
+const applyRatings = (products, filters) => {
+
+    let prodWithRating = products.filter(product => filters.rating.includes(`${product.rating}⭐`));
+    return filters.rating.length === 0 ? products : prodWithRating
+}
+
+export { addFilters, sortProducts, applyRatings }

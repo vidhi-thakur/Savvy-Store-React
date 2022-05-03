@@ -16,8 +16,11 @@ function FilterType({ heading, inputs, setFilters }) {
             sort: filters.sort.includes(input) ? filters.sort.filter(data => data !== input) : [input]
         }
     }
-    const updateRating = () => {
-
+    const updateRating = (filters, input) => {
+        return {
+            ...filters,
+            rating: filters.rating.includes(input) ? filters.rating.filter(data => data !== input) : [...filters.rating, input]
+        }
     }
     const sidebarFilters = (input, heading) => {
         switch (heading) {
@@ -28,9 +31,8 @@ function FilterType({ heading, inputs, setFilters }) {
                 setFilters((filters) => updateSort(filters, input))
                 return;
             case "Ratings":
-                // setFilters(updateRating)
+                setFilters((filters) => updateRating(filters, input))
                 return;
-
             default:
                 return;
         }
