@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ProductRHS.css';
 import { fetchProducts } from 'utils/api/fetchProducts';
 import { ProductCard } from '../productCard/ProductCard';
-import { addFilters, applyRatings, sortProducts } from 'helpers/filters';
+import { addFilters } from 'helpers/filters';
 
 function ProductRHS({ filters }) {
     const [products, setProducts] = useState(null)
@@ -14,7 +14,7 @@ function ProductRHS({ filters }) {
     }, [])
     return (
         <section className="product">
-            {products && applyRatings(sortProducts(addFilters(products, filters), filters), filters).map(prod => <ProductCard
+            {products && addFilters(products, filters)?.map(prod => <ProductCard
                 id={prod._id}
                 key={prod._id}
                 title={prod.title}

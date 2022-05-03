@@ -1,4 +1,11 @@
 const addFilters = (products, filters) => {
+    let finalProducts = applyCategory(products, filters);
+    finalProducts = sortProducts(finalProducts, filters);
+    finalProducts = applyRatings(finalProducts, filters);
+    return finalProducts;
+}
+
+const applyCategory = (products, filters) => {
     let filteredProducts = products.filter(product => filters.category.includes(product.categoryName));
     return filteredProducts.length === 0 || filters.category.includes("All items") ? products : filteredProducts
 }
@@ -20,4 +27,4 @@ const applyRatings = (products, filters) => {
     return filters.rating.length === 0 ? products : prodWithRating
 }
 
-export { addFilters, sortProducts, applyRatings }
+export { addFilters }
