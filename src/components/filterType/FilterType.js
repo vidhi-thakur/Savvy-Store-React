@@ -10,8 +10,11 @@ function FilterType({ heading, inputs, setFilters }) {
             category: filters.category.includes(input) ? filters.category.filter(data => data !== input) : [...filters.category, input]
         }
     }
-    const updateSort = () => {
-
+    const updateSort = (filters, input) => {
+        return {
+            ...filters,
+            sort: filters.sort.includes(input) ? filters.sort.filter(data => data !== input) : [input]
+        }
     }
     const updateRating = () => {
 
@@ -22,10 +25,10 @@ function FilterType({ heading, inputs, setFilters }) {
                 setFilters((filters) => updateCategory(filters, input))
                 return;
             case "Sort by":
-                setFilters(updateSort)
+                setFilters((filters) => updateSort(filters, input))
                 return;
             case "Ratings":
-                setFilters(updateRating)
+                // setFilters(updateRating)
                 return;
 
             default:
