@@ -10,8 +10,8 @@ export const products = [
     _id: uuid(),
     title: "Monilaria moniliforme",
     author: "WalawalaStudio",
-    price: 300,
-    categoryName: "",
+    price: 900,
+    categoryName: "Handmade",
     rating: 4, 
     description: "Monilaria moniliforme, Rare succulent, 10 seeds", 
     productImage: "https://i.etsystatic.com/14856213/r/il/958eca/1240346069/il_340x270.1240346069_dy0m.jpg"
@@ -20,8 +20,8 @@ export const products = [
     _id: uuid(),
     title: "Kooki & Keera",
     author: "Gadgetalicious",
-    price: 900,
-    categoryName: "",
+    price: 300,
+    categoryName: "Handmade",
     rating: 3, 
     description: "2 Air Plant Holders „Kooki & Keera“ / Kodama Tree Spirit Succulent Planters", 
     productImage: "https://i.etsystatic.com/21599334/r/il/58c2e7/3154479745/il_340x270.3154479745_9r4w.jpg"
@@ -31,7 +31,7 @@ export const products = [
     title: "Mini Garden Fairy",
     author: "Overspeed",
     price: 1257,
-    categoryName: "",
+    categoryName: "Vintage",
     rating: 5, 
     description: "6pc Mini Fairies Mini Garden Fairy Garden Accessories", 
     productImage: "https://i.etsystatic.com/7202160/r/il/ad8ca4/1146706082/il_340x270.1146706082_1ior.jpg"
