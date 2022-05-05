@@ -4,4 +4,5 @@ export { Login } from './login/Login';
 export { PageNotFound } from './pageNotFound/PageNotFound';
 export { Product } from './product/Product';
 export { Signup } from './signup/Signup';
-export { Wishlist } from './wishlist/Wishlist'
+export { Wishlist } from './wishlist/Wishlist';
+export { SingleProduct } from './singleProduct/SingleProduct';
