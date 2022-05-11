@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useAuth } from 'context/authContext';
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -6,21 +7,26 @@ import './Login.css'
 
 function Login() {
     const { loginUser } = useAuth();
-    const [userName, setUserName] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const location = useLocation()
     const navigate = useNavigate()
-    const updateUserName = event => {
-        setUserName(event.target.value)
+    const updateemail = event => {
+        setEmail(event.target.value)
     }
     const updatePassword = event => {
         setPassword(event.target.value)
     }
-    const submitLogin = (e) => {
+    const submitLogin = async (e) => {
         e.preventDefault()
-        if (userName !== '' && password !== '') {
-            loginUser()
-            navigate(location?.state?.from?.pathname, { replace: true })
+        if (email !== '' && password !== '') {
+            const response = await axios.post('/api/auth/login', {
+                email, password
+            });
+            if (response.data) {
+                loginUser()
+                navigate(location?.state?.from?.pathname, { replace: true })
+            }
         }
     }
     return (
@@ -30,7 +36,7 @@ function Login() {
                 <form className="form">
                     <div className="mb-1 input-container">
                         <label for="name">Enter name </label>
-                        <input onChange={updateUserName} required className="input" id="name" name="name" type="text" placeholder="e.g., Oliver" />
+                        <input onChange={updateemail} required className="input" id="name" name="name" type="text" placeholder="e.g., Oliver" />
                     </div>
                     <div className="mb-1 input-container">
                         <label for="password">Enter password </label>
@@ -46,7 +52,7 @@ function Login() {
                     </div>
                     <button onClick={submitLogin} type="submit" className="btn btn-primary-contained btn-extra">login</button>
                 </form>
-                <Link to="/signup" className="form-link">New user? Register here <i className='fas fa-angle-right'></i></Link>
+                <Link replace to="/signup" className="form-link">New user? Register here <i className='fas fa-angle-right'></i></Link>
             </div>
         </main>
     )
