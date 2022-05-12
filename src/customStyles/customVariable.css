@@ -27,3 +27,7 @@
 .cp {
     cursor: pointer;
 }
+
+.bold-text {
+    font-weight: 700;
+}
