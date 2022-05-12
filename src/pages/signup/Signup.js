@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import './Signup.css'
 import { useAuth } from 'context/authContext';
+import { authenticate } from 'utils/api/authenticate';
 
 function Signup() {
     const { loginUser } = useAuth();
@@ -24,16 +25,21 @@ function Signup() {
     const registerUser = async (e) => {
         e.preventDefault()
         if (userName !== '' && password !== '' && email !== '') {
-
-            const res = await axios.post('/api/auth/signup', {
+            const userInfo = {
                 email,
                 password,
-                someUserAttribute1: userName
-            });
-            const data = await res.data
-            if (data) {
-                loginUser()
-                navigate(location?.state?.from?.pathname, { replace: true })
+                firstName: userName
+            }
+            try {
+                const response = await authenticate(`${process.env.REACT_APP_API_HOST_URL}/auth/signup`, userInfo)
+                if (response) {
+                    localStorage.setItem("token", response.encodedToken)
+                    loginUser()
+                    const redirectTo = location?.state?.from?.pathname ?? location?.state?.from ?? '/product';
+                    navigate(redirectTo, { replace: true })
+                }
+            } catch (error) {
+                console.error(error)
             }
         }
     }
@@ -65,7 +71,7 @@ function Signup() {
                     </div>
                     <button type="submit" onClick={registerUser} className="btn btn-primary-contained btn-extra">login</button>
                 </form>
-                <Link replace to="/login" className="form-link">Already have an account? Login here <i
+                <Link state={{ from: location?.state?.from?.pathname }} replace to="/login" className="form-link">Already have an account? Login here <i
                     className='fas fa-angle-right'></i></Link>
             </div>
         </main>

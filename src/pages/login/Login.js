@@ -20,12 +20,13 @@ function Login() {
     const submitLogin = async (e) => {
         e.preventDefault()
         if (email !== '' && password !== '') {
-            const response = await axios.post('/api/auth/login', {
+            const response = await authenticate(`${process.env.REACT_APP_API_HOST_URL}/auth/login`, {
                 email, password
-            });
+            })
             if (response.data) {
+                const redirectTo = location?.state?.from?.pathname ?? location?.state?.from ?? '/product';
                 loginUser()
-                navigate(location?.state?.from?.pathname, { replace: true })
+                navigate(redirectTo, { replace: true })
             }
         }
     }
@@ -52,7 +53,7 @@ function Login() {
                     </div>
                     <button onClick={submitLogin} type="submit" className="btn btn-primary-contained btn-extra">login</button>
                 </form>
-                <Link replace to="/signup" className="form-link">New user? Register here <i className='fas fa-angle-right'></i></Link>
+                <Link state={{ from: location?.state?.from?.pathname }} replace to="/signup" className="form-link">New user? Register here <i className='fas fa-angle-right'></i></Link>
             </div>
         </main>
     )
