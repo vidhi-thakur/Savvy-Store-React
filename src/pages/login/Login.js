@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useAuth } from 'context/authContext';
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { authenticate } from 'utils/api/authenticate';
 // css 
 import './Login.css'
 
@@ -24,6 +25,7 @@ function Login() {
                 email, password
             })
             if (response.data) {
+                localStorage.setItem("token", response.encodedToken)
                 const redirectTo = location?.state?.from?.pathname ?? location?.state?.from ?? '/product';
                 loginUser()
                 navigate(redirectTo, { replace: true })
@@ -36,7 +38,7 @@ function Login() {
                 <h2 className="form-heading">Login</h2>
                 <form className="form">
                     <div className="mb-1 input-container">
-                        <label for="name">Enter name </label>
+                        <label for="name">Enter email </label>
                         <input onChange={updateemail} required className="input" id="name" name="name" type="text" placeholder="e.g., Oliver" />
                     </div>
                     <div className="mb-1 input-container">

@@ -3,7 +3,8 @@ import axios from 'axios';
 const authenticate = async (url, userInfo) => {
     try {
         const res = await axios.post(url, userInfo);
-        return res.data;
+        const data = await res.data;
+        return data;
     } catch (e) {
         console.error("error ", e)
     }
