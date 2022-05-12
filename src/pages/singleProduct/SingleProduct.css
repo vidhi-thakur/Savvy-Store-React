@@ -29,20 +29,39 @@
 }
 
 .singleProduct-image-container {
+  width: fit-content;
   position: relative;
 }
 
 .badge-custom {
   position: absolute;
-  bottom: 490px;
-  left: 560px;
+  margin: 0;
+  top: 7px;
+  right: 6px;
 }
 
 .singleProduct-information > p {
-    margin: var(--medium-spacing) 0;
+  margin: var(--medium-spacing) 0;
 }
 
 .singleProduct-information > button {
-    margin: 0;
+  margin: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .singleProduct {
+    flex-direction: column;
+  }
+  .singleProduct-image {
     width: 100%;
+    max-width: 37.5rem;
+    height: auto;
+  }
+  .singleProduct-information,
+  .singleProduct-image-container {
+    width: 90%;
+    max-width: 37.5rem;
+    margin: auto;
+  }
 }

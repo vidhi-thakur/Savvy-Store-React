@@ -67,8 +67,8 @@ function SingleProduct() {
         <div className='singleProduct'>
             <aside className='singleProduct-image-container'>
                 <img className='singleProduct-image' src={singleproduct?.productImage} alt={singleproduct?.title} />
-                <div className='badge-container' onClick={addItemToWishlist}>
-                    <i className={`${itemWishlisted ? `fas fa-heart` : `fa fa-heart-o`} badges icon-badge badge-round badge-custom cp`}></i>
+                <div className='badge-container badge-custom' onClick={addItemToWishlist}>
+                    <i className={`${itemWishlisted ? `fas fa-heart` : `fa fa-heart-o`} badges icon-badge badge-round cp`}></i>
                 </div>
             </aside>
             <div className='singleProduct-information'>
