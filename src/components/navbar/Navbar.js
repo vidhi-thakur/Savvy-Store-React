@@ -11,8 +11,8 @@ import { useAuth } from 'context/authContext';
 
 function Navbar() {
     const { isUserLoggedIn, logoutUser } = useAuth()
-    const [{ cartItems },] = useCart();
-    const [{ wishlistItems },] = useWishlist();
+    const [{ numOfItemsinCart },] = useCart();
+    const [{ numOfItemsinWishlist },] = useWishlist();
     return (
         <nav className="nav nav-container">
             <div className="avatar avatar-sm">
@@ -35,14 +35,14 @@ function Navbar() {
                 </NavLink>
                 <NavLink to='/wishlist'>
                     <span className="position-rel nav-icon-box">
-                        <i className="fas fa-heart nav-icon"></i>{wishlistItems.length > 0 && <span
-                            className="badge status-badge badge-primary-contained badge-round sm-badge">{wishlistItems.length}</span>}
+                        <i className="fas fa-heart nav-icon"></i>{numOfItemsinWishlist > 0 && <span
+                            className="badge status-badge badge-primary-contained badge-round sm-badge">{numOfItemsinWishlist}</span>}
                     </span>
                 </NavLink>
                 <NavLink to='/cart-management'>
                     <span className="position-rel nav-icon-box">
-                        <i className="fas fa-cart-plus nav-icon"></i>{cartItems.length > 0 && <span
-                            className="badge status-badge badge-primary-contained badge-round sm-badge">{cartItems.length}</span>}
+                        <i className="fas fa-cart-plus nav-icon"></i>{numOfItemsinCart > 0 && <span
+                            className="badge status-badge badge-primary-contained badge-round sm-badge">{numOfItemsinCart}</span>}
                     </span>
                 </NavLink>
             </div>

@@ -18,15 +18,16 @@ function CartManagement() {
 
             <section className="cart">
                 {!isCartEmpty ? <div className="cart-items p-1">
-                    {cartItems.map(cartItem => <CartManagementCard
+                    {cartItems.map((cartItem, i) => <CartManagementCard
                         id={cartItem.id}
-                        key={cartItem.id}
+                        key={`${cartItem.id}-${i}`}
                         title={cartItem.title}
                         rating={cartItem.rating}
                         description={cartItem.description}
                         productImage={cartItem.productImage}
                         author={cartItem.author}
                         price={cartItem.price}
+                        count={cartItem.count}
                     />)}
                 </div> : <NoData componentName="cart" />}
                 {!isCartEmpty && <PlaceOrder />}

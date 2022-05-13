@@ -3,7 +3,7 @@ import React from 'react';
 import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
 
-function WishlistCard({ id, title, author, rating, description, price, productImage, }) {
+function WishlistCard({ id, title, author, rating, description, price, productImage, count }) {
     const [, dispatchWishlist] = useWishlist();
     const [, dispatchCart] = useCart();
 
@@ -32,6 +32,7 @@ function WishlistCard({ id, title, author, rating, description, price, productIm
             <div className="badge-container card-customBadge">
                 <i className="fas fa-heart badges icon-badge badge-round"></i>
             </div>
+            {count > 1 && <span className="badge badge-primary-contained card-customBadge-horizontal">{count} Items</span>}
             <img loading="lazy" className="card-image-horizontal"
                 src={productImage}
                 alt={title}

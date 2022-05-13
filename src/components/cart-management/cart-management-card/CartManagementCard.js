@@ -3,7 +3,7 @@ import React from 'react';
 import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
 
-function CartManagementCard({ id, title, author, rating, description, price, productImage, }) {
+function CartManagementCard({ id, title, author, rating, description, price, productImage, count }) {
     const [, dispatchCart] = useCart();
     const [, dispatchWishlist] = useWishlist()
 
@@ -34,7 +34,7 @@ function CartManagementCard({ id, title, author, rating, description, price, pro
     }
     return (
         <div className="card card-horizontal">
-            <span className="badge badge-primary-contained card-customBadge-horizontal">Best seller</span>
+            {count > 1 && <span className="badge badge-primary-contained card-customBadge-horizontal">{count} Items</span>}
             <img loading="lazy" className="card-image-vertical"
                 src={productImage}
                 alt={title}
