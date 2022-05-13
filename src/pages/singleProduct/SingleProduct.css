@@ -1,5 +1,4 @@
 .singleProduct {
-  width: 100%;
   max-width: 56.25rem;
   margin: var(--xlarge-spacing) auto;
   display: flex;
