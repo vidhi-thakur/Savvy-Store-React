@@ -8,7 +8,7 @@ import { useWishlist } from 'context/addToWishlist';
 // css
 import './Navbar.css'
 import { useAuth } from 'context/authContext';
-
+ 
 function Navbar() {
     const { isUserLoggedIn, logoutUser } = useAuth()
     const [{ cartItems },] = useCart();
