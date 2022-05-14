@@ -25,6 +25,7 @@ function Wishlist() {
                     productImage={list.productImage}
                     author={list.author}
                     price={list.price}
+                    count={list.count}
                 />)}
             </section> : <NoData
                 componentName="wishlist"
