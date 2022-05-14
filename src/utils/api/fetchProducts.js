@@ -5,7 +5,7 @@ const fetchProducts = async () => {
         const res = await axios.get(`${process.env.REACT_APP_API_HOST_URL}/products`);
         return res.data.products;
     } catch (e) {
-        console.error("error ",e)
+        console.error("error ", e)
     }
 }
 

@@ -11,7 +11,8 @@ import {
   Login,
   Wishlist,
   Product,
-  PageNotFound
+  PageNotFound,
+  SingleProduct
 } from 'pages/exportPages';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           </RequiresAuth>
         } />
         <Route path='/product' element={<Product />} />
+        <Route path='/product/:productID' element={<SingleProduct />} />
         <Route path="/cart-management" element={
           <RequiresAuth>
             <CartManagement />

@@ -4,6 +4,7 @@ import './ProductCard.css'
 // context
 import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
+import { Link } from 'react-router-dom';
 
 function ProductCard({ id, title, author, rating, description, price, productImage }) {
     const [, dispatchCart] = useCart();
@@ -45,12 +46,14 @@ function ProductCard({ id, title, author, rating, description, price, productIma
                 src={productImage}
                 alt={title}
             />
-            <div className="card-textContainer">
-                <h3 className="pb-1">{title}</h3>
-                <p className="pb-1">By {author}</p>
-                <p className='card-productInfo'><strong>Rs. {price}</strong> <span>{rating}⭐</span></p>
-                <p>{description}</p>
-            </div>
+            <Link to={`/product/${id}`}>
+                <div className="card-textContainer">
+                    <h3 className="pb-1">{title}</h3>
+                    <p className="pb-1">By {author}</p>
+                    <p className='card-productInfo'><strong>Rs. {price}</strong> <span>{rating}⭐</span></p>
+                    <p>{description}</p>
+                </div>
+            </Link>
             <div className="card-btnContainer">
                 <button onClick={addItemToCart} className="btn btn-primary-contained"><i className="fas fa-cart-plus  mr-05"></i> add to
                     cart</button>
