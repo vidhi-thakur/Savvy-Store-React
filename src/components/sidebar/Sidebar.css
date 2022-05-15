@@ -29,3 +29,21 @@
   top: 0;
   position: relative;
 }
+
+.sort-container {
+  margin-bottom: var(--lg-spacing);
+}
+
+.sort-input {
+  margin: var(--sm-spacing) 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+/* hiding this section for now */
+.filter-price-range {
+  display: none;
+}
