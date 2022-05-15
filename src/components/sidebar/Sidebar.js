@@ -47,7 +47,7 @@ function Sidebar({ setFilters }) {
       <section className='filter-price-range'>
         <h3 className="mb-05">Price</h3>
         <div className="price-range-input">
-          <label for="price-range">Select range</label>
+          <label htmlFor ="price-range">Select range</label>
           <input type="range" id="price-range" name="price-range" className="price-range" min="50" max="200" />
         </div>
       </section>
@@ -57,7 +57,7 @@ function Sidebar({ setFilters }) {
         <div className='sort-container'>
           {sortBy.map(option => <div key={option} onClick={() => setFilters((filters) => updateSort(filters, option))} className="sort-input">
             <input checked={isChecked.includes(option)} type="radio" id={option} name="sort-by" className="sort-range" value={option} />
-            <label className='cp' for={option}>{option}</label>
+            <label className='cp' htmlFor ={option}>{option}</label>
           </div>)}
         </div>
       </section>
