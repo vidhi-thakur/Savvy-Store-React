@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // css
 import './ProductCard.css'
 // context
@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 function ProductCard({ id, title, author, rating, description, price, productImage }) {
     const [, dispatchCart] = useCart();
     const [, dispatchWishlist] = useWishlist();
+    const [isWishlisted, setIsWishlisted] = useState(false)
 
     const addItemToCart = () => {
         dispatchCart({
@@ -25,19 +26,30 @@ function ProductCard({ id, title, author, rating, description, price, productIma
         })
     }
 
-    const addItemToWishlist = () => {
-        dispatchWishlist({
-            type: "ADD_TO_WISHLIST",
-            payload: {
-                title,
-                author,
-                rating,
-                description,
-                price,
-                productImage,
-                id
-            }
-        })
+    const updateItemToWishlist = () => {
+        if (isWishlisted) {
+            setIsWishlisted(false)
+            dispatchWishlist({
+                type: "REMOVE_FROM_WISHLIST",
+                payload: {
+                    id
+                }
+            })
+        } else {
+            setIsWishlisted(true)
+            dispatchWishlist({
+                type: "ADD_TO_WISHLIST",
+                payload: {
+                    title,
+                    author,
+                    rating,
+                    description,
+                    price,
+                    productImage,
+                    id
+                }
+            })
+        }
     }
 
     return (
@@ -55,10 +67,9 @@ function ProductCard({ id, title, author, rating, description, price, productIma
                 </div>
             </Link>
             <div className="card-btnContainer">
-                <button onClick={addItemToCart} className="btn btn-primary-contained"><i className="fas fa-cart-plus  mr-05"></i> add to
+                <button onClick={addItemToCart} className="btn btn-primary-contained w-full"><i className="fas fa-cart-plus  mr-05"></i> add to
                     cart</button>
-                <button onClick={addItemToWishlist} className="btn btn-primary-outlined mt-0"><i className="fas fa-cart-plus  mr-05"></i> add to
-                    wishlist</button>
+                <button onClick={updateItemToWishlist} className="btn btn-primary-outlined mt-0 w-full"><i className="fas fa-cart-plus  mr-05"></i> {!isWishlisted ? "add to wishlist" : "remove from wishlist"}</button>
             </div>
         </div>
     )
