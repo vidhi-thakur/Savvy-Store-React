@@ -31,3 +31,8 @@
 .bold-text {
     font-weight: 700;
 }
+
+.sm-img-size {
+    height: 15rem;
+    width: 15rem;
+}

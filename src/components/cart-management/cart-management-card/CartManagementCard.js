@@ -35,7 +35,7 @@ function CartManagementCard({ id, title, author, rating, description, price, pro
     return (
         <div className="card card-horizontal">
             {count > 1 && <span className="badge badge-primary-contained card-customBadge-horizontal">{count} Items</span>}
-            <img loading="lazy" className="card-image-vertical"
+            <img loading="lazy" className="card-image-vertical sm-img-size"
                 src={productImage}
                 alt={title}
             />
