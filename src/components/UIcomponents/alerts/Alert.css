@@ -1,0 +1,14 @@
+.alert-position {
+    margin: var(--medium-spacing);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.alert-position > .alert {
+    align-items: center;
+    box-shadow: var(--default-shadow);
+    margin-left: auto
+}

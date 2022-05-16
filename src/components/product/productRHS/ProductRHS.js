@@ -4,7 +4,7 @@ import { fetchProducts } from 'utils/api/fetchProducts';
 import { ProductCard } from '../productCard/ProductCard';
 import { addFilters } from 'helpers/filters';
 
-function ProductRHS({ filters }) {
+function ProductRHS({ filters, setproductStatus }) {
     const [products, setProducts] = useState(null)
     useEffect(() => {
         (async () => {
@@ -23,6 +23,7 @@ function ProductRHS({ filters }) {
                 productImage={prod.productImage}
                 author={prod.author}
                 price={prod.price}
+                setproductStatus={setproductStatus}
             />)}
         </section>
     )

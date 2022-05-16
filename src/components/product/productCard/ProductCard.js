@@ -6,7 +6,7 @@ import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
 import { Link } from 'react-router-dom';
 
-function ProductCard({ id, title, author, rating, description, price, productImage }) {
+function ProductCard({ id, title, author, rating, description, price, productImage, setproductStatus }) {
     const [, dispatchCart] = useCart();
     const [, dispatchWishlist] = useWishlist();
     const [isWishlisted, setIsWishlisted] = useState(false)
@@ -23,7 +23,8 @@ function ProductCard({ id, title, author, rating, description, price, productIma
                 productImage,
                 id
             }
-        })
+        });
+        setproductStatus({ content: "Product added to cart 😀😀", type: "success" })
     }
 
     const updateItemToWishlist = () => {
@@ -34,7 +35,8 @@ function ProductCard({ id, title, author, rating, description, price, productIma
                 payload: {
                     id
                 }
-            })
+            });
+            setproductStatus({ content: "Product removed from wishlist ☹️", type: "danger" })
         } else {
             setIsWishlisted(true)
             dispatchWishlist({
@@ -48,7 +50,8 @@ function ProductCard({ id, title, author, rating, description, price, productIma
                     productImage,
                     id
                 }
-            })
+            });
+            setproductStatus({ content: "Product added to wishlist 😀", type: "success" })
         }
     }
 
