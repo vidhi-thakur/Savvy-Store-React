@@ -4,6 +4,7 @@ import './SingleProduct.css'
 import { fetchSingleProduct } from 'helpers/singleProduct/fetchSingleProduct';
 import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
+import { Alert } from 'components/exportComponents';
 
 function SingleProduct() {
     const [, dispatchCart] = useCart();
@@ -11,6 +12,11 @@ function SingleProduct() {
     const [singleproduct, setSingleProduct] = useState(null)
     const [itemWishlisted, setItemWishlisted] = useState(false)
     const { productID } = useParams();
+    const initialProductStatus = {
+        content: null,
+        type: null
+    }
+    const [productStatus, setproductStatus] = useState(initialProductStatus)
     useEffect(() => {
         (async () => {
             try {
@@ -23,6 +29,11 @@ function SingleProduct() {
             }
         })()
     }, [])
+    useEffect(() => {
+        if (productStatus.content && productStatus.type) {
+            setTimeout(() => setproductStatus(initialProductStatus), 1500)
+        }
+    }, [productStatus])
 
     const addItemToCart = () => {
         dispatchCart({
@@ -37,6 +48,7 @@ function SingleProduct() {
                 id: productID
             }
         })
+        setproductStatus({ content: "Product added to cart 😀😀", type: "success" })
     }
 
     const addItemToWishlist = () => {
@@ -53,7 +65,8 @@ function SingleProduct() {
                     productImage: singleproduct?.productImage,
                     id: productID
                 }
-            })
+            });
+            setproductStatus({ content: "Product added to wishlist 😀", type: "success" })
         } else {
             dispatchWishlist({
                 type: "REMOVE_FROM_WISHLIST",
@@ -61,10 +74,12 @@ function SingleProduct() {
                     id: productID
                 }
             });
+            setproductStatus({ content: "Product removed from wishlist ☹️", type: "danger" })
         }
     }
     return (
         <div className='singleProduct'>
+            {productStatus.content && productStatus.type && <Alert type={productStatus.type} content={productStatus.content} />}
             <aside className='singleProduct-image-container'>
                 <img className='singleProduct-image' src={singleproduct?.productImage} alt={singleproduct?.title} />
                 <div className='badge-container badge-custom' onClick={addItemToWishlist}>
