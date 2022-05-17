@@ -3,22 +3,23 @@ import React from 'react';
 import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
 
-function CartManagementCard({ id, title, author, rating, description, price, productImage, count }) {
+function CartManagementCard({ id, title, author, rating, description, price, productImage, count, setproductStatus }) {
     const [, dispatchCart] = useCart();
     const [, dispatchWishlist] = useWishlist()
 
-    const removeItemFromCart = () => {
+    const removeItemFromCart = ({ isWishlisted = false }) => {
         dispatchCart({
             type: "REMOVE_FROM_CART",
             payload: {
                 id,
                 price,
             }
-        })
+        });
+        !isWishlisted && setproductStatus({ content: "Product removed from cart ☹️", type: "danger" })
     }
 
     const moveToWishlist = () => {
-        removeItemFromCart();
+        removeItemFromCart({ isWishlisted: true });
         dispatchWishlist({
             type: "ADD_TO_WISHLIST",
             payload: {
@@ -30,12 +31,13 @@ function CartManagementCard({ id, title, author, rating, description, price, pro
                 productImage,
                 id
             }
-        })
+        });
+        setproductStatus({ content: "Product moved to wishlist!", type: "danger" })
     }
     return (
         <div className="card card-horizontal">
             {count > 1 && <span className="badge badge-primary-contained card-customBadge-horizontal">{count} Items</span>}
-            <img loading="lazy" className="card-image-vertical"
+            <img loading="lazy" className="card-image-vertical sm-img-size"
                 src={productImage}
                 alt={title}
             />

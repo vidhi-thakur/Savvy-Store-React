@@ -1,13 +1,20 @@
-import React from 'react'
-// css
+import React, { useState, useEffect } from 'react'
 import './CartManagement.css'
-// context
 import { useCart } from 'context/addToCart'
-// local components
-import { CartManagementCard, NoData, PlaceOrder } from 'components/exportComponents';
+import { Alert, CartManagementCard, NoData, PlaceOrder } from 'components/exportComponents';
 
 function CartManagement() {
     const [{ cartItems },] = useCart();
+    const initialProductStatus = {
+        content: null,
+        type: null
+    }
+    const [productStatus, setproductStatus] = useState(initialProductStatus)
+    useEffect(() => {
+        if (productStatus.content && productStatus.type) {
+            setTimeout(() => setproductStatus(initialProductStatus), 1500)
+        }
+    }, [productStatus])
 
     let isCartEmpty = cartItems.length === 0;
     return (
@@ -15,7 +22,7 @@ function CartManagement() {
             <header>
                 <h3 className="cart-heading">My Cart({cartItems.length})</h3>
             </header>
-
+            {productStatus.content && productStatus.type && <Alert type={productStatus.type} content={productStatus.content} />}
             <section className="cart">
                 {!isCartEmpty ? <div className="cart-items p-1">
                     {cartItems.map((cartItem, i) => <CartManagementCard
@@ -28,6 +35,7 @@ function CartManagement() {
                         author={cartItem.author}
                         price={cartItem.price}
                         count={cartItem.count}
+                        setproductStatus={setproductStatus}
                     />)}
                 </div> : <NoData componentName="cart" />}
                 {!isCartEmpty && <PlaceOrder />}

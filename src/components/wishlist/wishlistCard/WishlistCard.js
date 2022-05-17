@@ -3,7 +3,7 @@ import React from 'react';
 import { useCart } from 'context/addToCart';
 import { useWishlist } from 'context/addToWishlist';
 
-function WishlistCard({ id, title, author, rating, description, price, productImage, count }) {
+function WishlistCard({ id, title, author, rating, description, price, productImage, count, setproductStatus }) {
     const [, dispatchWishlist] = useWishlist();
     const [, dispatchCart] = useCart();
 
@@ -25,7 +25,8 @@ function WishlistCard({ id, title, author, rating, description, price, productIm
                 price,
                 productImage,
             }
-        })
+        });
+        setproductStatus({ content: "Product added to cart 😀😀", type: "success" })
     }
     return (
         <div className="card card-vertical">
