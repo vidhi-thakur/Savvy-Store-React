@@ -8,6 +8,7 @@ It is a _simple and sophisticated_ E-commerce store curated for plants and garde
 2. CSS
 3. react-icons
 4. react-router-dom
+5. A component library - [Savvy](https://savvy-doc.netlify.app/) 
 
 ## Current pages
 1. [home page](https://savvy-react-store.netlify.app/)
@@ -19,6 +20,6 @@ It is a _simple and sophisticated_ E-commerce store curated for plants and garde
 7. [cart management page](https://savvy-react-store.netlify.app/cart-management)
 
 
-#### Live project URL: https://savvy-react-store.netlify.app/ 
+#### Live project URL: [https://savvy-react-store.netlify.app/](https://temp-store.netlify.app/) 
 
 PS. If you like the repo, do give it a star⭐
